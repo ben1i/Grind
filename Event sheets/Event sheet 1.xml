@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="Points" sid="592360904172670" static="0" type="number">0</variable>
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="225944710970009" static="0" type="number">0</variable>
         <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="701365965347750" static="0" type="number">0</variable>
         <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="436411932967248" static="0" type="number">0</variable>
@@ -29,7 +30,7 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-1" name="Set X" sid="336414381979760" type="TiledBackground">
+                <action disabled="1" id="-1" name="Set X" sid="336414381979760" type="TiledBackground">
                     <param id="0" name="X">Self.X + Self.Width / 2</param>
                 </action>
             </actions>
@@ -37,7 +38,9 @@
         <comment>While on floor, keep holding the &quot;run right&quot; control, so the character keeps running.</comment>
         <event-block sid="405038089512315">
             <conditions>
-                <condition behavior="Platform" id="2" name="Is on floor" sid="422414076747632" type="Player" />
+                <condition id="0" name="On key pressed" sid="422414076747632" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
             </conditions>
             <actions>
                 <action behavior="Platform" id="7" name="Simulate control" sid="621668953962202" type="Player">
@@ -45,11 +48,12 @@
                 </action>
             </actions>
         </event-block>
-        <comment>On any user input at all, make the character jump.</comment>
+        <comment>Keybinds</comment>
         <event-block any="1" sid="855144116395010">
             <conditions>
-                <condition id="0" name="On any touch start" sid="129707795940900" type="Touch" />
-                <condition id="1" name="On any key pressed" sid="554375823846514" type="Keyboard" />
+                <condition id="0" name="On key pressed" sid="554375823846514" type="Keyboard">
+                    <param id="0" name="Key">32</param>
+                </condition>
             </conditions>
             <actions>
                 <action behavior="Platform" id="7" name="Simulate control" sid="738720517663100" type="Player">
@@ -63,18 +67,22 @@
                 <condition id="-1" name="Every tick" sid="999809016244226" type="System" />
             </conditions>
             <actions>
-                <action id="-10" name="Add to" sid="666340551553332" type="System">
+                <action disabled="1" id="-10" name="Add to" sid="666340551553332" type="System">
                     <param id="0" name="Variable">CurrentDistance</param>
                     <param id="1" name="Value">Block.Bullet.Speed * dt</param>
                 </action>
-                <action id="-10" name="Add to" sid="152990901862592" type="System">
+                <action disabled="1" id="-10" name="Add to" sid="152990901862592" type="System">
                     <param id="0" name="Variable">TotalDistance</param>
                     <param id="1" name="Value">Block.Bullet.Speed * dt * 0.01</param>
                 </action>
-                <action id="0" name="Set text" sid="186043715942471" type="DistanceDisplay">
-                    <param id="0" name="Text">round(TotalDistance)</param>
+                <action id="-10" name="Add to" sid="109517331147214" type="System">
+                    <param id="0" name="Variable">Points</param>
+                    <param id="1" name="Value">1</param>
                 </action>
-                <action behavior="Bullet" id="0" name="Set speed" sid="323920088749956" type="Block">
+                <action id="0" name="Set text" sid="186043715942471" type="DistanceDisplay">
+                    <param id="0" name="Text">round(Points)</param>
+                </action>
+                <action behavior="Bullet" disabled="1" id="0" name="Set speed" sid="323920088749956" type="Block">
                     <param id="0" name="Speed">300 + (TotalDistance / 50)</param>
                 </action>
                 <action id="-1" name="Set X" sid="733053859136832" type="Player">
@@ -85,7 +93,7 @@
         <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Create it with a random width and height, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
         <event-block sid="411712520496975">
             <conditions>
-                <condition id="-14" name="Compare variable" sid="662788818784207" type="System">
+                <condition disabled="1" id="-14" name="Compare variable" sid="662788818784207" type="System">
                     <param id="0" name="Variable">CurrentDistance</param>
                     <param id="1" name="Comparison">5</param>
                     <param id="2" name="Value">NextBlock</param>
