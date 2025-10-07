@@ -73,7 +73,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="879023062643391" speed="5">
-                    <frame duration="1" hotspotX="0.514286" hotspotY="0.512821" />
+                    <frame duration="1" hotspotX="0.513978" hotspotY="0.513441" />
                 </animation>
             </animation-folder>
         </object-type>
