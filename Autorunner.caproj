@@ -73,18 +73,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="879023062643391" speed="5">
-                    <frame duration="1" hotspotX="0.513978" hotspotY="0.513441" original-source="C:\Users\benja\Downloads\Perso_gros2.png">
-                        <collision-poly>
-                            <point x="0.0666667" y="0.0416667" />
-                            <point x="0.498925" y="0" />
-                            <point x="0.866667" y="0.0833333" />
-                            <point x="0.933333" y="0.5" />
-                            <point x="0.866667" y="0.916667" />
-                            <point x="0.498925" y="1" />
-                            <point x="0.0666667" y="0.958333" />
-                            <point x="0.133333" y="0.5" />
-                        </collision-poly>
-                    </frame>
+                    <frame duration="1" hotspotX="0.514286" hotspotY="0.512821" />
                 </animation>
             </animation-folder>
         </object-type>
