@@ -13,12 +13,14 @@
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -43,6 +45,40 @@
         <prop name="Use iOS retina display">iPhone only</prop>
     </configuration-settings>
     <object-folder>
+        <object-folder name="Floor">
+            <object-type name="FloorBottom" sid="507128308211522">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Solid" sid="878147108525988">
+                        <behavior id="solid" />
+                    </behavior-type>
+                    <behavior-type name="Bullet" sid="549151874304670">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                    <behavior-type name="DestroyOutsideLayout" sid="720133662613319">
+                        <behavior id="destroy" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="672132352989324" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Gabriel\Desktop\floor_bottom.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="FloorTop" sid="895036811905389">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="629357926252436">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172361809271570" speed="5">
+                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Gabriel\Desktop\floor_top.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+        </object-folder>
         <object-type name="TiledBackground" sid="934001451559669">
             <plugin id="TiledBg" />
             <behaviors>
@@ -51,18 +87,6 @@
                 </behavior-type>
             </behaviors>
             <texture original-source="C:\Users\benja\Documents\ShapeIt\src\assets\platform.png" />
-        </object-type>
-        <object-type name="Block" sid="340273894750559">
-            <plugin id="TiledBg" />
-            <behaviors>
-                <behavior-type name="Solid" sid="811884315888744">
-                    <behavior id="solid" />
-                </behavior-type>
-                <behavior-type name="Bullet" sid="655414960435696">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
-            <texture original-source="C:\Users\benja\Documents\ShapeIt\src\assets\road.png" />
         </object-type>
         <object-type name="Player" sid="742528618321123">
             <plugin id="Sprite" />
@@ -85,6 +109,17 @@
         </object-type>
         <object-type name="DistanceDisplay" sid="294371956037423">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="Sprite" sid="256801683158007">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="207119821474050" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Gabriel\Desktop\floor_bottom.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextBox" sid="206013191303741">
+            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families />
