@@ -13,7 +13,7 @@
                 <condition id="-2" name="On start of layout" sid="141875354388639" type="System" />
             </conditions>
             <actions>
-                <action behavior="Bullet" disabled="1" id="3" name="Set angle of motion" sid="971723529316199" type="TiledBackground">
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="971723529316199" type="TiledBackground">
                     <param id="0" name="Angle">180</param>
                 </action>
             </actions>

@@ -16,10 +16,12 @@
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -94,6 +96,9 @@
                 <behavior-type name="Platform" sid="575016609481999">
                     <behavior id="Platform" />
                 </behavior-type>
+                <behavior-type name="BoundToLayout" sid="540309326831874">
+                    <behavior id="bound" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="879023062643391" speed="5">
@@ -120,6 +125,12 @@
         </object-type>
         <object-type name="TextBox" sid="206013191303741">
             <plugin id="TextBox" />
+        </object-type>
+        <object-type name="ProgressBar" sid="915331371128009">
+            <plugin id="progressbar" />
+            <instance-variables>
+                <instance-variable name="Stamina" sid="130752389452874" type="number" />
+            </instance-variables>
         </object-type>
     </object-folder>
     <families />
