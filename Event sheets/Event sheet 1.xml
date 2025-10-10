@@ -123,5 +123,67 @@
                 <action id="-26" name="Restart layout" sid="486076817041953" type="System" />
             </actions>
         </event-block>
+        <event-block sid="569601198769180">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="990353892327473" type="Sprite2" />
+            </conditions>
+            <actions>
+                <action id="-17" name="Move forward" sid="695041888256769" type="Sprite2">
+                    <param id="0" name="Distance">843 - Self.Width</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="776160914908403" type="Sprite2">
+                    <param id="0" name="Object">FloorBottom</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="672357403972979" type="Sprite2">
+                    <param id="0" name="Object">FloorTop</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-1" name="Set X" sid="725503386829253" type="FloorBottom">
+                    <param id="0" name="X">Self.X - (Self.Width + 32)</param>
+                </action>
+                <action id="-1" name="Set X" sid="639367697307645" type="FloorTop">
+                    <param id="0" name="X">Self.X - (Self.Width + 32)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="938879781206510">
+            <conditions>
+                <condition id="-4" name="Is outside layout" sid="674292854845381" type="FloorBottom" />
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="658885310510396" type="FloorBottom" />
+                <action id="-9" name="Destroy" sid="864437199279185" type="FloorTop" />
+            </actions>
+        </event-block>
+        <event-block sid="561293834024974">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="144781448859456" type="Player">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="X co-ordinate">1686</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="590926031662324" type="System">
+                    <param id="0" name="Layout">Layout 1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="304816717455968" type="Camera" />
+            </actions>
+        </event-block>
+        <event-block sid="666890667164697">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="892715898600279" type="System" />
+            </conditions>
+            <actions>
+                <action id="-17" name="Move forward" sid="942169918292023" type="Player">
+                    <param id="0" name="Distance">843</param>
+                </action>
+                <action id="-2" name="Set Y" sid="433605163218362" type="Player">
+                    <param id="0" name="Y">387.7462540000007</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

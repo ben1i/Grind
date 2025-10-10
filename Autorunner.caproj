@@ -35,6 +35,7 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Layout 1</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
@@ -48,29 +49,21 @@
     </configuration-settings>
     <object-folder>
         <object-folder name="Floor">
-            <object-type name="FloorBottom" sid="507128308211522">
-                <plugin id="Sprite" />
+            <object-type name="FloorTop" sid="937345298256121">
+                <plugin id="TiledBg" />
+                <texture original-source="C:\Users\benja\Documents\GitHub\Grind\Animations\FloorTop\Default\000.png" />
+            </object-type>
+            <object-type name="FloorBottom" sid="246779744954343">
+                <plugin id="TiledBg" />
                 <behaviors>
-                    <behavior-type name="Solid" sid="878147108525988">
+                    <behavior-type name="Solid" sid="395393953933222">
                         <behavior id="solid" />
                     </behavior-type>
-                    <behavior-type name="DestroyOutsideLayout" sid="720133662613319">
+                    <behavior-type name="DestroyOutsideLayout" sid="662497626318946">
                         <behavior id="destroy" />
                     </behavior-type>
                 </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="672132352989324" speed="5">
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Gabriel\Desktop\floor_bottom.png" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="FloorTop" sid="895036811905389">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172361809271570" speed="5">
-                        <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Gabriel\Desktop\floor_top.png" />
-                    </animation>
-                </animation-folder>
+                <texture original-source="C:\Users\benja\Documents\GitHub\Grind\Animations\FloorBottom\Default\000.png" />
             </object-type>
         </object-folder>
         <object-type name="TiledBackground" sid="934001451559669">
@@ -132,6 +125,14 @@
                 </behavior-type>
             </behaviors>
             <texture />
+        </object-type>
+        <object-type name="Sprite2" sid="579022659035113">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="617906959239957" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
