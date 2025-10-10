@@ -87,6 +87,10 @@
                 <action disabled="1" id="-1" name="Set X" sid="733053859136832" type="Player">
                     <param id="0" name="X">100</param>
                 </action>
+                <action id="-3" name="Set position" sid="577653797174966" type="Camera">
+                    <param id="0" name="X">lerp(Self.X, Player.X, 0.03)</param>
+                    <param id="1" name="Y">lerp(Self.Y, Player.Y, 0.03)</param>
+                </action>
             </actions>
         </event-block>
         <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Create it with a random width and height, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
