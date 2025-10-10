@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <c2project>
-    <name>Autorunner</name>
+    <name>Grind</name>
     <description></description>
     <version>1.0</version>
     <author></author>
@@ -15,8 +15,6 @@
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TextBox" version="1">Text box</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
-        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
-        <plugin author="Scirra" id="progressbar" version="1">Progress bar</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
@@ -81,6 +79,21 @@
                 </animation-folder>
             </object-type>
         </object-folder>
+        <object-folder name="Background">
+            <object-type name="Sky" sid="238044234761743">
+                <plugin id="TiledBg" />
+                <texture />
+            </object-type>
+            <object-type name="BuildingsBack" sid="969782558513892">
+                <plugin id="TiledBg" />
+                <behaviors>
+                    <behavior-type name="Bullet" sid="656312436696131">
+                        <behavior id="Bullet" />
+                    </behavior-type>
+                </behaviors>
+                <texture original-source="C:\Users\Gabriel\Desktop\buildings_back.png" />
+            </object-type>
+        </object-folder>
         <object-type name="TiledBackground" sid="934001451559669">
             <plugin id="TiledBg" />
             <behaviors>
@@ -106,9 +119,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Touch" sid="799829859117717">
-            <plugin id="Touch" />
-        </object-type>
         <object-type name="Keyboard" sid="707793653823891">
             <plugin id="Keyboard" />
         </object-type>
@@ -126,12 +136,6 @@
         <object-type name="TextBox" sid="206013191303741">
             <plugin id="TextBox" />
         </object-type>
-        <object-type name="ProgressBar" sid="915331371128009">
-            <plugin id="progressbar" />
-            <instance-variables>
-                <instance-variable name="Stamina" sid="130752389452874" type="number" />
-            </instance-variables>
-        </object-type>
     </object-folder>
     <families />
     <layout-folder>
@@ -141,11 +145,6 @@
         <event-sheet>Event sheet 1.xml</event-sheet>
     </event-folder>
     <global-instances>
-        <global-instance type="Touch" uid="4">
-            <properties>
-                <use-mouse-input>Yes</use-mouse-input>
-            </properties>
-        </global-instance>
         <global-instance type="Keyboard" uid="5" />
     </global-instances>
     <sounds-folder />
