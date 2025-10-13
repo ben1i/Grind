@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable comment="Parallax effect" constant="0" name="BackgroundSpeed" sid="125714304428111" static="0" type="number">300</variable>
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="225944710970009" static="0" type="number">0</variable>
         <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="701365965347750" static="0" type="number">0</variable>
         <variable constant="0" name="Points" sid="352491283470731" static="0" type="number">0</variable>
@@ -84,9 +85,6 @@
                 <action id="0" name="Set text" sid="186043715942471" type="DistanceDisplay">
                     <param id="0" name="Text">round(Points)</param>
                 </action>
-                <action disabled="1" id="-1" name="Set X" sid="733053859136832" type="Player">
-                    <param id="0" name="X">100</param>
-                </action>
             </actions>
         </event-block>
         <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Create it with a random width and height, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
@@ -105,7 +103,6 @@
                 </action>
             </actions>
         </event-block>
-        <comment>Destroy blocks that go off the left of the screen so they don&apos;t keep taking up memory or CPU.</comment>
         <comment>If the player falls off the bottom of the screen, restart the game.</comment>
         <event-block sid="889118406698099">
             <conditions>
@@ -117,6 +114,36 @@
             <actions>
                 <action id="-21" name="Reset global variables" sid="484644963225364" type="System" />
                 <action id="-26" name="Restart layout" sid="486076817041953" type="System" />
+            </actions>
+        </event-block>
+        <comment>Parallax effect</comment>
+        <event-block sid="215411364606786">
+            <conditions>
+                <condition disabled="1" id="-1" name="Every tick" sid="103675506961750" type="System" />
+            </conditions>
+            <actions />
+        </event-block>
+        <event-block sid="981355960847496">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="914918546080880" type="BuildingsBack">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-1736</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="787645640398527" type="BuildingsBack">
+                    <param id="0" name="X">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="446435955146024">
+            <conditions>
+                <condition behavior="Platform" id="0" name="Is moving" sid="157673957234232" type="Player" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="0" name="Set speed" sid="657398129632640" type="BuildingsBack">
+                    <param id="0" name="Speed">BackgroundSpeed/4</param>
+                </action>
             </actions>
         </event-block>
     </events>

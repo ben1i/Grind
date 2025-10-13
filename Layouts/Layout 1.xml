@@ -4,7 +4,7 @@
     <sid>214500874734735</sid>
     <event-sheet>Event sheet 1</event-sheet>
     <size>
-        <width>843</width>
+        <width>1686</width>
         <height>596</height>
     </size>
     <margins>
@@ -40,7 +40,7 @@
                         <x>0</x>
                         <y>0</y>
                         <z>0</z>
-                        <width>848</width>
+                        <width>1648</width>
                         <height>592</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -69,15 +69,15 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>0</x>
-                        <y>160</y>
+                        <x>3472</x>
+                        <y>416</y>
                         <z>0</z>
-                        <width>2544</width>
-                        <height>256</height>
+                        <width>3472</width>
+                        <height>224</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
-                        <angle>0</angle>
+                        <angle>3.141592741</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
@@ -106,7 +106,7 @@
                         <x>0</x>
                         <y>416</y>
                         <z>0</z>
-                        <width>864</width>
+                        <width>1328</width>
                         <height>82</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -146,7 +146,7 @@
                         <x>0</x>
                         <y>496</y>
                         <z>0</z>
-                        <width>864</width>
+                        <width>1328</width>
                         <height>99</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -196,9 +196,9 @@
                                 <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
-                        <behavior-instance type="BoundToLayout">
+                        <behavior-instance type="ScrollTo">
                             <properties>
-                                <bound-by>Edge</bound-by>
+                                <initial-state>Enabled</initial-state>
                             </properties>
                         </behavior-instance>
                     </behavior-instances>
