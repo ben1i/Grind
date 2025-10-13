@@ -43,6 +43,9 @@
                 <action behavior="Platform" id="7" name="Simulate control" sid="738720517663100" type="Player">
                     <param id="0" name="Control">2</param>
                 </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="680796279216188" type="TouchingPoint">
+                    <param id="0" name="Control">2</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="998453684138039">
@@ -58,6 +61,9 @@
                 <action id="7" name="Set mirrored" sid="732266695242810" type="Player">
                     <param id="0" name="State">1</param>
                 </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="191354284053866" type="TouchingPoint">
+                    <param id="0" name="Control">1</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="411349174220881">
@@ -72,6 +78,9 @@
                 </action>
                 <action id="7" name="Set mirrored" sid="880736201444897" type="Player">
                     <param id="0" name="State">0</param>
+                </action>
+                <action behavior="Platform" id="7" name="Simulate control" sid="543163742739702" type="TouchingPoint">
+                    <param id="0" name="Control">0</param>
                 </action>
             </actions>
         </event-block>
@@ -125,21 +134,77 @@
         </event-block>
         <event-group description="" sid="629035176697876" title="Enemies">
             <sub-events>
-                <event-block sid="364517992801139">
+                <event-block sid="596523517826426">
                     <conditions>
-                        <condition id="-1" name="Every tick" sid="450146912370171" type="System" />
+                        <condition id="0" name="On key pressed" sid="950653512679217" type="Keyboard">
+                            <param id="0" name="Key">75</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="648576705321405" type="Monster" />
+                    </actions>
+                </event-block>
+                <event-block sid="240528425612524">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="889156109853424" type="Monster">
+                            <param id="0" name="Object">TouchingPoint</param>
+                        </condition>
                     </conditions>
                     <actions />
+                    <sub-events>
+                        <event-block sid="462216906212276">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="304382959923858" type="Monster">
+                                    <param id="0" name="Instance variable">TouchingPlayer</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="326656603380809" type="Monster">
+                                    <param id="0" name="Instance variable">TouchingPlayer</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="818786631515924">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="107373696026090" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Set value" sid="729844286912374" type="Monster">
+                                    <param id="0" name="Instance variable">TouchingPlayer</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="121810562516856" title="Player">
+            <sub-events>
                 <event-block sid="840753532464087">
                     <conditions>
-                        <condition id="-3" name="Is on-screen" sid="418287636186241" type="Monster" />
+                        <condition behavior="Platform" id="0" name="Is moving" sid="418287636186241" type="Player" />
                     </conditions>
                     <actions>
                         <action behavior="Platform" id="7" name="Simulate control" sid="654408989657568" type="Monster">
                             <param id="0" name="Control">0</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="435823353555509">
+                            <conditions>
+                                <condition id="0" name="On collision with another object" sid="608776383687080" type="Player">
+                                    <param id="0" name="Object">Monster</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="634343571306881" type="Player" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

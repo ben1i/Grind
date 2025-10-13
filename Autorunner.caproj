@@ -99,6 +99,9 @@
                 <behavior-type name="ScrollTo" sid="811737095907117">
                     <behavior id="scrollto" />
                 </behavior-type>
+                <behavior-type name="Solid" sid="747060365823448">
+                    <behavior id="solid" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="879023062643391" speed="5">
@@ -134,6 +137,10 @@
         </object-type>
         <object-type name="Monster" sid="269078468783111">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="TouchingPlayer" sid="786951400730749" type="number" />
+                <instance-variable name="HealthPoints" sid="430127334291134" type="number" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="215739599801596">
                     <behavior id="Platform" />
@@ -147,6 +154,22 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="TouchingPoint" sid="734719099367314">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="953960645504350">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="762961902248170" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Text" sid="926570161468261">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families />
