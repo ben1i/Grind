@@ -119,5 +119,29 @@
                 <action id="-26" name="Restart layout" sid="486076817041953" type="System" />
             </actions>
         </event-block>
+        <event-block sid="174900700164135">
+            <conditions />
+            <actions />
+        </event-block>
+        <event-group description="" sid="629035176697876" title="Enemies">
+            <sub-events>
+                <event-block sid="364517992801139">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="450146912370171" type="System" />
+                    </conditions>
+                    <actions />
+                </event-block>
+                <event-block sid="840753532464087">
+                    <conditions>
+                        <condition id="-3" name="Is on-screen" sid="418287636186241" type="Monster" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="654408989657568" type="Monster">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
