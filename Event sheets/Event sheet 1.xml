@@ -16,6 +16,10 @@
                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="971723529316199" type="TiledBackground">
                     <param id="0" name="Angle">180</param>
                 </action>
+                <action id="-7" name="Scroll to position" sid="779168374504677" type="System">
+                    <param id="0" name="X">Player.X</param>
+                    <param id="1" name="Y">Player.Y</param>
+                </action>
             </actions>
         </event-block>
         <comment>Wrap the scrolling background infinitely by moving it back after it&apos;s scrolled the width of the main image to the left.</comment>
@@ -87,10 +91,6 @@
                 <action disabled="1" id="-1" name="Set X" sid="733053859136832" type="Player">
                     <param id="0" name="X">100</param>
                 </action>
-                <action id="-3" name="Set position" sid="577653797174966" type="Camera">
-                    <param id="0" name="X">lerp(Self.X, Player.X, 0.03)</param>
-                    <param id="1" name="Y">lerp(Self.Y, Player.Y, 0.03)</param>
-                </action>
             </actions>
         </event-block>
         <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Create it with a random width and height, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
@@ -121,6 +121,30 @@
             <actions>
                 <action id="-21" name="Reset global variables" sid="484644963225364" type="System" />
                 <action id="-26" name="Restart layout" sid="486076817041953" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="276151770328702">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="420049196815099" type="Sprite2" />
+            </conditions>
+            <actions>
+                <action id="-17" name="Move forward" sid="298485433649225" type="Sprite2">
+                    <param id="0" name="Distance">843</param>
+                </action>
+                <action id="-23" name="Move at angle" sid="215299884784537" type="Sprite2">
+                    <param id="0" name="Angle">180</param>
+                    <param id="1" name="Distance">-100</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="130474880245305" type="Sprite2">
+                    <param id="0" name="Object">FloorBottom</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="496175478948359" type="Sprite2">
+                    <param id="0" name="Object">FloorTop</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
             </actions>
         </event-block>
     </events>

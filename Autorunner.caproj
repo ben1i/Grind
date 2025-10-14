@@ -21,7 +21,6 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
-        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -53,9 +52,6 @@
                 <behaviors>
                     <behavior-type name="Solid" sid="878147108525988">
                         <behavior id="solid" />
-                    </behavior-type>
-                    <behavior-type name="DestroyOutsideLayout" sid="720133662613319">
-                        <behavior id="destroy" />
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
@@ -124,14 +120,13 @@
                 <instance-variable name="Stamina" sid="130752389452874" type="number" />
             </instance-variables>
         </object-type>
-        <object-type name="Camera" sid="484755415737304">
-            <plugin id="TiledBg" />
-            <behaviors>
-                <behavior-type name="ScrollTo" sid="384607451015622">
-                    <behavior id="scrollto" />
-                </behavior-type>
-            </behaviors>
-            <texture />
+        <object-type name="Sprite2" sid="385895161094162">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="525520316541200" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
