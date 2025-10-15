@@ -131,6 +131,11 @@
                 <action id="-17" name="Move forward" sid="298485433649225" type="Sprite2">
                     <param id="0" name="Distance">843</param>
                 </action>
+                <action id="0" name="Spawn another object" sid="957961138645699" type="Sprite2">
+                    <param id="0" name="Object">TiledBackground</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
                 <action id="0" name="Spawn another object" sid="130474880245305" type="Sprite2">
                     <param id="0" name="Object">FloorBottom</param>
                     <param id="1" name="Layer">0</param>
@@ -141,16 +146,11 @@
                     <param id="1" name="Layer">0</param>
                     <param id="2" name="Image point">0</param>
                 </action>
-                <action id="0" name="Spawn another object" sid="957961138645699" type="Sprite2">
-                    <param id="0" name="Object">TiledBackground</param>
-                    <param id="1" name="Layer">0</param>
-                    <param id="2" name="Image point">0</param>
-                </action>
                 <action id="-1" name="Set X" sid="646501967019103" type="FloorBottom">
-                    <param id="0" name="X">Sprite2.X + Sprite2.Width/2</param>
+                    <param id="0" name="X">Sprite2.X</param>
                 </action>
                 <action id="-1" name="Set X" sid="322602537393358" type="FloorTop">
-                    <param id="0" name="X">Sprite2.X + Sprite2.Width/2</param>
+                    <param id="0" name="X">Sprite2.X</param>
                 </action>
                 <action id="-2" name="Set Y" sid="501748625410828" type="FloorBottom">
                     <param id="0" name="Y">496</param>
