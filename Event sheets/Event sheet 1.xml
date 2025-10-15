@@ -16,10 +16,14 @@
                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="971723529316199" type="TiledBackground">
                     <param id="0" name="Angle">180</param>
                 </action>
+                <action id="-7" name="Scroll to position" sid="779168374504677" type="System">
+                    <param id="0" name="X">843 / 2</param>
+                    <param id="1" name="Y">596 / 2</param>
+                </action>
             </actions>
         </event-block>
         <comment>Wrap the scrolling background infinitely by moving it back after it&apos;s scrolled the width of the main image to the left.</comment>
-        <event-block sid="115000552221125">
+        <event-block disabled="1" sid="115000552221125">
             <conditions>
                 <condition id="-1" name="Compare X" sid="866170470958344" type="TiledBackground">
                     <param id="0" name="Comparison">3</param>
@@ -67,7 +71,7 @@
                 </condition>
             </conditions>
             <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="430287270714766" type="Player">
+                <action behavior="Platform" disabled="1" id="7" name="Simulate control" sid="430287270714766" type="Player">
                     <param id="0" name="Control">0</param>
                 </action>
                 <action id="7" name="Set mirrored" sid="880736201444897" type="Player">
@@ -84,8 +88,8 @@
                 <action id="0" name="Set text" sid="186043715942471" type="DistanceDisplay">
                     <param id="0" name="Text">round(Points)</param>
                 </action>
-                <action disabled="1" id="-1" name="Set X" sid="733053859136832" type="Player">
-                    <param id="0" name="X">100</param>
+                <action id="-5" name="Scroll to X" sid="147286690442910" type="System">
+                    <param id="0" name="X">Player.X + 200</param>
                 </action>
             </actions>
         </event-block>
@@ -117,6 +121,82 @@
             <actions>
                 <action id="-21" name="Reset global variables" sid="484644963225364" type="System" />
                 <action id="-26" name="Restart layout" sid="486076817041953" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="276151770328702">
+            <conditions>
+                <condition id="-3" name="Is on-screen" sid="420049196815099" type="Sprite2" />
+            </conditions>
+            <actions>
+                <action id="-17" name="Move forward" sid="298485433649225" type="Sprite2">
+                    <param id="0" name="Distance">843</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="130474880245305" type="Sprite2">
+                    <param id="0" name="Object">FloorBottom</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="496175478948359" type="Sprite2">
+                    <param id="0" name="Object">FloorTop</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="957961138645699" type="Sprite2">
+                    <param id="0" name="Object">TiledBackground</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-1" name="Set X" sid="646501967019103" type="FloorBottom">
+                    <param id="0" name="X">Sprite2.X + Sprite2.Width/2</param>
+                </action>
+                <action id="-1" name="Set X" sid="322602537393358" type="FloorTop">
+                    <param id="0" name="X">Sprite2.X + Sprite2.Width/2</param>
+                </action>
+                <action id="-2" name="Set Y" sid="501748625410828" type="FloorBottom">
+                    <param id="0" name="Y">496</param>
+                </action>
+                <action id="-2" name="Set Y" sid="417273617177975" type="FloorTop">
+                    <param id="0" name="Y">416</param>
+                </action>
+                <action id="-2" name="Set Y" sid="358303513558868" type="TiledBackground">
+                    <param id="0" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="361530015253909">
+            <conditions>
+                <condition id="-3" inverted="1" name="Is on-screen" sid="349235639983205" type="TiledBackground" />
+                <condition id="-1" name="Compare X" sid="997825176778721" type="TiledBackground">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">Player.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="509332310414352" type="TiledBackground" />
+            </actions>
+        </event-block>
+        <event-block sid="184014727535299">
+            <conditions>
+                <condition id="-3" inverted="1" name="Is on-screen" sid="387564159408403" type="FloorBottom" />
+                <condition id="-1" name="Compare X" sid="965643725916483" type="FloorBottom">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">Player.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="285641015689274" type="FloorBottom" />
+            </actions>
+        </event-block>
+        <event-block sid="890183120767386">
+            <conditions>
+                <condition id="-3" inverted="1" name="Is on-screen" sid="929070556723600" type="FloorTop" />
+                <condition id="-1" name="Compare X" sid="308198521098055" type="FloorTop">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">Player.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="799553593474972" type="FloorTop" />
             </actions>
         </event-block>
     </events>

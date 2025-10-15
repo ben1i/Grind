@@ -21,8 +21,6 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
-        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -54,12 +52,6 @@
                     <behavior-type name="Solid" sid="878147108525988">
                         <behavior id="solid" />
                     </behavior-type>
-                    <behavior-type name="Bullet" sid="549151874304670">
-                        <behavior id="Bullet" />
-                    </behavior-type>
-                    <behavior-type name="DestroyOutsideLayout" sid="720133662613319">
-                        <behavior id="destroy" />
-                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="672132352989324" speed="5">
@@ -69,11 +61,6 @@
             </object-type>
             <object-type name="FloorTop" sid="895036811905389">
                 <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="Bullet" sid="629357926252436">
-                        <behavior id="Bullet" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="172361809271570" speed="5">
                         <frame duration="1" hotspotX="0" hotspotY="0" original-source="C:\Users\Gabriel\Desktop\floor_top.png" />
@@ -95,9 +82,6 @@
             <behaviors>
                 <behavior-type name="Platform" sid="575016609481999">
                     <behavior id="Platform" />
-                </behavior-type>
-                <behavior-type name="BoundToLayout" sid="540309326831874">
-                    <behavior id="bound" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -131,6 +115,14 @@
             <instance-variables>
                 <instance-variable name="Stamina" sid="130752389452874" type="number" />
             </instance-variables>
+        </object-type>
+        <object-type name="Sprite2" sid="385895161094162">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="525520316541200" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
