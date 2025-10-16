@@ -126,11 +126,41 @@
         </object-type>
         <object-type name="Monster1" sid="988873832449503">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Life" sid="285595831915355" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="662671585484119">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="534753196521227" speed="5">
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" original-source="C:\Users\benja\Downloads\pizza.png">
+                        <collision-poly>
+                            <point x="0.0136986" y="0.0136986" />
+                            <point x="0.493151" y="0.0684932" />
+                            <point x="0.808219" y="0.191781" />
+                            <point x="0.917808" y="0.493151" />
+                            <point x="0.726027" y="0.726027" />
+                            <point x="0.493151" y="0.917808" />
+                            <point x="0.205479" y="0.794521" />
+                            <point x="0.0684932" y="0.493151" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite3" sid="911930040529473">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="506675899746385" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="SlashText" sid="813639292462375">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families />
