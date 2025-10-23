@@ -4,9 +4,8 @@
     <name>Event sheet 1</name>
     <events>
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="225944710970009" static="0" type="number">0</variable>
-        <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="701365965347750" static="0" type="number">0</variable>
+        <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="StartDistance" sid="701365965347750" static="0" type="number">0</variable>
         <variable constant="0" name="Points" sid="352491283470731" static="0" type="number">0</variable>
-        <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="436411932967248" static="0" type="number">0</variable>
         <comment>On the start of the game, the camera is set on the X and Y axis so that the outside of the game is not on screen</comment>
         <event-block sid="467408829797980">
             <conditions>
@@ -19,6 +18,10 @@
                 <action id="-7" name="Scroll to position" sid="779168374504677" type="System">
                     <param id="0" name="X">843 / 2</param>
                     <param id="1" name="Y">596 / 2</param>
+                </action>
+                <action id="-9" name="Set value" sid="722351093198488" type="System">
+                    <param id="0" name="Variable">StartDistance</param>
+                    <param id="1" name="Value">Player.X</param>
                 </action>
             </actions>
         </event-block>
@@ -95,24 +98,12 @@
                 <action id="0" name="Set text" sid="522581090981229" type="DistanceDisplay">
                     <param id="0" name="Text">TotalDistance</param>
                 </action>
-            </actions>
-        </event-block>
-        <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Create it with a random width and height, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
-        <event-block sid="411712520496975">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="662788818784207" type="System">
-                    <param id="0" name="Variable">CurrentDistance</param>
-                    <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">NextBlock</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-11" name="Subtract from" sid="565121237377312" type="System">
-                    <param id="0" name="Variable">CurrentDistance</param>
-                    <param id="1" name="Value">NextBlock</param>
+                <action behavior="Platform" id="1" name="Set max speed" sid="995453359865168" type="Player">
+                    <param id="0" name="Max Speed">100 + (TotalDistance * 2)</param>
                 </action>
             </actions>
         </event-block>
+        <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Create it with a random width and height, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
         <comment>If the player falls off the bottom of the screen, restart the game.</comment>
         <event-block sid="889118406698099">
             <conditions>
@@ -225,14 +216,14 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-10" name="Add to" sid="402379930313684" type="System">
+                <action id="-9" name="Set value" sid="402379930313684" type="System">
                     <param id="0" name="Variable">TotalDistance</param>
-                    <param id="1" name="Value">1 * 0.01</param>
+                    <param id="1" name="Value">round((Player.X - StartDistance) * 0.02)</param>
                 </action>
             </actions>
         </event-block>
         <comment>Random enemy spawn event. When the player is moving, it has a random chance of spawning an enemy wherever a new platform is created</comment>
-        <event-block sid="826639351001781">
+        <event-block disabled="1" sid="826639351001781">
             <conditions>
                 <condition id="-6" name="Every X seconds" sid="720674079432380" type="System">
                     <param id="0" name="Interval (seconds)">random(1, 2)</param>
@@ -310,6 +301,69 @@
             <actions>
                 <action id="-15" name="Set visible" sid="219574393477371" type="SlashText">
                     <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="800112099960858">
+            <conditions>
+                <condition behavior="Platform" id="1" name="Compare speed" sid="984606621899979" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Speed">0</param>
+                </condition>
+                <condition behavior="Platform" id="1" name="Compare speed" sid="662671717062195" type="Player">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Speed">1000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="932012279481943" type="Player">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="953929336852575">
+            <conditions>
+                <condition behavior="Platform" id="1" name="Compare speed" sid="395521144536032" type="Player">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Speed">1000</param>
+                </condition>
+                <condition behavior="Platform" id="1" name="Compare speed" sid="351103838498539" type="Player">
+                    <param id="0" name="Comparison">2</param>
+                    <param id="1" name="Speed">2500</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="670923439114527" type="Player">
+                    <param id="0" name="Animation">&quot;WalkSlender&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="567182338058603">
+            <conditions>
+                <condition behavior="Platform" id="1" name="Compare speed" sid="288829588844774" type="Player">
+                    <param id="0" name="Comparison">5</param>
+                    <param id="1" name="Speed">2500</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="194423854843306" type="Player">
+                    <param id="0" name="Animation">&quot;WalkFit&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="650622898642159">
+            <conditions>
+                <condition behavior="Platform" id="1" name="Compare speed" sid="781868968672075" type="Player">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Speed">5000</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="1" name="Set max speed" sid="400885278237654" type="Player">
+                    <param id="0" name="Max Speed">5000</param>
                 </action>
             </actions>
         </event-block>
