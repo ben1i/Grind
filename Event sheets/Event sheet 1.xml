@@ -3,8 +3,10 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="isPlayerNearMob" sid="708422512452343" static="0" type="number">0</variable>
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="225944710970009" static="0" type="number">0</variable>
         <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="StartDistance" sid="701365965347750" static="0" type="number">0</variable>
+        <variable constant="0" name="FightPoints" sid="974599658662579" static="0" type="number">0</variable>
         <variable constant="0" name="Points" sid="352491283470731" static="0" type="number">0</variable>
         <comment>On the start of the game, the camera is set on the X and Y axis so that the outside of the game is not on screen</comment>
         <event-block sid="467408829797980">
@@ -96,10 +98,14 @@
                     <param id="1" name="Image point (optional)">0</param>
                 </action>
                 <action id="0" name="Set text" sid="522581090981229" type="DistanceDisplay">
-                    <param id="0" name="Text">TotalDistance</param>
+                    <param id="0" name="Text">Points</param>
                 </action>
                 <action behavior="Platform" id="1" name="Set max speed" sid="995453359865168" type="Player">
-                    <param id="0" name="Max Speed">100 + (TotalDistance * 2)</param>
+                    <param id="0" name="Max Speed">100 + (Points)</param>
+                </action>
+                <action id="-9" name="Set value" sid="873745283757252" type="System">
+                    <param id="0" name="Variable">Points</param>
+                    <param id="1" name="Value">TotalDistance + FightPoints</param>
                 </action>
             </actions>
         </event-block>
@@ -294,24 +300,59 @@
             <actions>
                 <action id="-9" name="Destroy" sid="580679128629764" type="Monster1" />
                 <action id="-10" name="Add to" sid="237429694621471" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">FightPoints</param>
                     <param id="1" name="Value">10 * (TotalDistance * 0.1)</param>
                 </action>
             </actions>
         </event-block>
         <comment>Everytime the player gets near a monster, a splash text appears telling the player to press A to damage the monster. TO FIX</comment>
+        <event-block sid="695538791840922">
+            <conditions />
+            <actions>
+                <action id="-9" name="Set value" sid="986473209088434" type="System">
+                    <param id="0" name="Variable">isPlayerNearMob</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="980436742078192">
             <conditions>
                 <condition id="-11" name="For Each" sid="810672087052700" type="System">
                     <param id="0" name="Object">Monster1</param>
                 </condition>
-                <condition id="1" name="Is overlapping another object" sid="375951375589421" type="Monster1">
+                <condition id="1" name="Is overlapping another object" sid="993967656478505" type="Monster1">
                     <param id="0" name="Object">Sprite3</param>
                 </condition>
             </conditions>
             <actions>
-                <action id="-15" name="Set visible" sid="219574393477371" type="SlashText">
+                <action id="-9" name="Set value" sid="850437643370028" type="System">
+                    <param id="0" name="Variable">isPlayerNearMob</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="-24" name="Stop loop" sid="365957123724871" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="803776899051528">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="464451895008156" type="System">
+                    <param id="0" name="Variable">isPlayerNearMob</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="802706418792760" type="SlashText">
                     <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="101082527984494">
+            <conditions>
+                <condition id="-22" name="Else" sid="979638806943377" type="System" />
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="845969821050141" type="SlashText">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
@@ -336,12 +377,12 @@
         <event-block sid="969683057079605">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="487694961865432" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">5</param>
                     <param id="2" name="Value">0</param>
                 </condition>
                 <condition id="-14" name="Compare variable" sid="602649754726150" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">2</param>
                     <param id="2" name="Value">500</param>
                 </condition>
@@ -358,12 +399,12 @@
         <event-block sid="521667846563732">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="565956347948230" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">5</param>
                     <param id="2" name="Value">500</param>
                 </condition>
                 <condition id="-14" name="Compare variable" sid="339305270464070" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">2</param>
                     <param id="2" name="Value">1000</param>
                 </condition>
@@ -380,7 +421,7 @@
         <event-block sid="774722546294977">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="346406898068438" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">5</param>
                     <param id="2" name="Value">1000</param>
                 </condition>
@@ -411,12 +452,12 @@
         <event-block sid="814201143702343">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="237486542511513" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">5</param>
                     <param id="2" name="Value">0</param>
                 </condition>
                 <condition id="-14" name="Compare variable" sid="869351335261745" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">2</param>
                     <param id="2" name="Value">500</param>
                 </condition>
@@ -434,12 +475,12 @@
         <event-block sid="343508049058792">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="233131426621694" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">5</param>
                     <param id="2" name="Value">500</param>
                 </condition>
                 <condition id="-14" name="Compare variable" sid="910044988452659" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">2</param>
                     <param id="2" name="Value">1000</param>
                 </condition>
@@ -457,7 +498,7 @@
         <event-block sid="462831948917551">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="443685239987441" type="System">
-                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">5</param>
                     <param id="2" name="Value">1000</param>
                 </condition>
