@@ -196,6 +196,116 @@
                         </collision-poly>
                     </frame>
                 </animation>
+                <animation framecount="3" loop="0" name="Fight" pingpong="0" repeatcount="1" repeatto="0" sid="328735786843745" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\Fight\fight1.png">
+                        <collision-poly>
+                            <point x="0.14791" y="0.123656" />
+                            <point x="0.5" y="0.0403226" />
+                            <point x="0.799035" y="0.168011" />
+                            <point x="0.799035" y="0.831989" />
+                            <point x="0.5" y="0.998656" />
+                            <point x="0.151125" y="0.873656" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500699" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\Fight\fight2.png">
+                        <collision-poly>
+                            <point x="0.0881119" y="0.0846774" />
+                            <point x="0.499301" y="0.0403226" />
+                            <point x="0.651748" y="0.334677" />
+                            <point x="0.651748" y="0.5" />
+                            <point x="0.738462" y="0.748656" />
+                            <point x="0.499301" y="0.998656" />
+                            <point x="0.0881119" y="0.915323" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\Fight\fight3.png">
+                        <collision-poly>
+                            <point x="0.0779703" y="0.0846774" />
+                            <point x="0.5" y="0.0819892" />
+                            <point x="0.576733" y="0.459677" />
+                            <point x="0.576733" y="0.5" />
+                            <point x="0.768564" y="0.748656" />
+                            <point x="0.5" y="0.915323" />
+                            <point x="0.0779703" y="0.915323" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="3" loop="0" name="FightSlender" pingpong="0" repeatcount="1" repeatto="0" sid="359872447031199" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\Fight - Slender\fight1.png">
+                        <collision-poly>
+                            <point x="0.145833" y="0.122312" />
+                            <point x="0.5" y="0.0389785" />
+                            <point x="0.798077" y="0.169355" />
+                            <point x="0.798077" y="0.5" />
+                            <point x="0.748397" y="0.788979" />
+                            <point x="0.5" y="0.997312" />
+                            <point x="0.201923" y="0.830645" />
+                            <point x="0.152244" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500699" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\Fight - Slender\fight2.png">
+                        <collision-poly>
+                            <point x="0.0881119" y="0.0846774" />
+                            <point x="0.499301" y="0.0403226" />
+                            <point x="0.651748" y="0.334677" />
+                            <point x="0.651748" y="0.5" />
+                            <point x="0.695105" y="0.706989" />
+                            <point x="0.499301" y="0.998656" />
+                            <point x="0.131469" y="0.873656" />
+                            <point x="0.0881119" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500555" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\Fight - Slender\fight3.png">
+                        <collision-poly>
+                            <point x="0.0699223" y="0.0846774" />
+                            <point x="0.499445" y="0.123656" />
+                            <point x="0.553829" y="0.540323" />
+                            <point x="0.930078" y="0.5" />
+                            <point x="0.758047" y="0.706989" />
+                            <point x="0.499445" y="0.706989" />
+                            <point x="0.104329" y="0.873656" />
+                            <point x="0.0699223" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="3" loop="0" name="FightFit" pingpong="0" repeatcount="1" repeatto="0" sid="886703631955296" speed="5">
+                    <frame duration="1" hotspotX="0.500699" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\Fight - Fit\fight1.png">
+                        <collision-poly>
+                            <point x="0.174825" y="0.168464" />
+                            <point x="0.499301" y="0.0377358" />
+                            <point x="0.781818" y="0.210243" />
+                            <point x="0.781818" y="0.5" />
+                            <point x="0.738462" y="0.747978" />
+                            <point x="0.499301" y="0.998652" />
+                            <point x="0.0447552" y="0.956873" />
+                            <point x="0.218182" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\Fight - Fit\fight2.png">
+                        <collision-poly>
+                            <point x="0.123324" y="0.123656" />
+                            <point x="0.5" y="0.0403226" />
+                            <point x="0.66622" y="0.334677" />
+                            <point x="0.66622" y="0.5" />
+                            <point x="0.74933" y="0.748656" />
+                            <point x="0.5" y="0.998656" />
+                            <point x="0.0844504" y="0.915323" />
+                            <point x="0.126005" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\Fight - Fit\fight3.png">
+                        <collision-poly>
+                            <point x="0.0925553" y="0.123656" />
+                            <point x="0.5" y="0.540323" />
+                            <point x="0.720322" y="0.373656" />
+                            <point x="0.905433" y="0.5" />
+                            <point x="0.843058" y="0.790323" />
+                            <point x="0.5" y="0.748656" />
+                            <point x="0.0633803" y="0.915323" />
+                            <point x="0.0945674" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
             </animation-folder>
         </object-type>
         <object-type name="Touch" sid="799829859117717">
