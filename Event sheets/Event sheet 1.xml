@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="ItemsPoints" sid="798513645301634" static="0" type="number">0</variable>
         <variable constant="0" name="randomItem" sid="280970967650368" static="0" type="number">0</variable>
         <variable constant="0" name="isPlayerNearMob" sid="708422512452343" static="0" type="number">0</variable>
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="225944710970009" static="0" type="number">0</variable>
@@ -106,7 +107,7 @@
                 </action>
                 <action id="-9" name="Set value" sid="873745283757252" type="System">
                     <param id="0" name="Variable">Points</param>
-                    <param id="1" name="Value">TotalDistance + FightPoints</param>
+                    <param id="1" name="Value">TotalDistance + FightPoints + ItemsPoints</param>
                 </action>
             </actions>
         </event-block>
@@ -168,13 +169,6 @@
                     <param id="1" name="Value">round(random(1, 8))</param>
                 </action>
             </actions>
-        </event-block>
-        <event-block disabled="1" sid="826639351001781">
-            <conditions>
-                <condition id="-3" name="Is on-screen" sid="720674079432380" type="Sprite2" />
-                <condition behavior="Platform" id="0" name="Is moving" sid="478736172024427" type="Player" />
-            </conditions>
-            <actions />
         </event-block>
         <comment>Destroy blocks that go off the left of the screen so they don&apos;t keep taking up memory or CPU.</comment>
         <event-block sid="361530015253909">
@@ -424,6 +418,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="873786556109922" type="Brocoli" />
+                <action id="-10" name="Add to" sid="416398768314447" type="System">
+                    <param id="0" name="Variable">ItemsPoints</param>
+                    <param id="1" name="Value">5</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="861448577489619">
@@ -437,6 +435,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="580623875660361" type="Prot" />
+                <action id="-10" name="Add to" sid="581363309558802" type="System">
+                    <param id="0" name="Variable">ItemsPoints</param>
+                    <param id="1" name="Value">5</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="616148396401302">
@@ -450,6 +452,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="672518462505467" type="Water" />
+                <action id="-10" name="Add to" sid="990916880124084" type="System">
+                    <param id="0" name="Variable">ItemsPoints</param>
+                    <param id="1" name="Value">5</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="927675041685668">
@@ -463,6 +469,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="398367658556201" type="Weight" />
+                <action id="-10" name="Add to" sid="787557243766611" type="System">
+                    <param id="0" name="Variable">ItemsPoints</param>
+                    <param id="1" name="Value">5</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="184098847991466">
@@ -476,6 +486,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="370078761572189" type="Cola" />
+                <action id="-11" name="Subtract from" sid="902784133678044" type="System">
+                    <param id="0" name="Variable">FightPoints</param>
+                    <param id="1" name="Value">5</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="253226061089761">
@@ -489,6 +503,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="374233451987431" type="Fries" />
+                <action id="-11" name="Subtract from" sid="372611678011575" type="System">
+                    <param id="0" name="Variable">FightPoints</param>
+                    <param id="1" name="Value">5</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="288588334900567">
@@ -502,6 +520,10 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="326431866701295" type="Pizza" />
+                <action id="-11" name="Subtract from" sid="219122234409677" type="System">
+                    <param id="0" name="Variable">FightPoints</param>
+                    <param id="1" name="Value">5</param>
+                </action>
             </actions>
         </event-block>
         <comment>Everytime the player press A near a monster, the monster lose a life and turns red. If the monster has no life left, it dies.</comment>
@@ -763,188 +785,6 @@
                     <param id="0" name="Animation">&quot;FightFit&quot;</param>
                     <param id="1" name="From">1</param>
                 </action>
-            </actions>
-        </event-block>
-        <event-block sid="276800827117589">
-            <conditions>
-                <condition id="-11" name="For Each" sid="623086287335801" type="System">
-                    <param id="0" name="Object">Brocoli</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="731762275591263" type="Brocoli">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="347573115951015" type="Brocoli" />
-            </actions>
-        </event-block>
-        <event-block sid="258201084160331">
-            <conditions>
-                <condition id="-11" name="For Each" sid="582970504477711" type="System">
-                    <param id="0" name="Object">Prot</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="753044904866318" type="Prot">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="662343003254065" type="Prot" />
-            </actions>
-        </event-block>
-        <event-block sid="583060904016126">
-            <conditions>
-                <condition id="-11" name="For Each" sid="744218328091308" type="System">
-                    <param id="0" name="Object">Water</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="704218948030563" type="Water">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="111322485549964" type="Water" />
-            </actions>
-        </event-block>
-        <event-block sid="599531221204419">
-            <conditions>
-                <condition id="-11" name="For Each" sid="766528965776660" type="System">
-                    <param id="0" name="Object">Weight</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="558092162784794" type="Weight">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="395687060707300" type="Weight" />
-            </actions>
-        </event-block>
-        <event-block sid="271894196312735">
-            <conditions>
-                <condition id="-11" name="For Each" sid="794952236083642" type="System">
-                    <param id="0" name="Object">Cola</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="586807598909942" type="Cola">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="639247863713401" type="Cola" />
-            </actions>
-        </event-block>
-        <event-block sid="106621876780645">
-            <conditions>
-                <condition id="-11" name="For Each" sid="475247470409491" type="System">
-                    <param id="0" name="Object">Fries</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="904747036786864" type="Fries">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="167690900727824" type="Fries" />
-            </actions>
-        </event-block>
-        <event-block sid="589930096089689">
-            <conditions>
-                <condition id="-11" name="For Each" sid="404930008404172" type="System">
-                    <param id="0" name="Object">Pizza</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="966425962370785" type="Pizza">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="682947472352297" type="Pizza" />
-            </actions>
-        </event-block>
-        <event-block sid="372745687583361">
-            <conditions>
-                <condition id="-11" name="For Each" sid="735307872748271" type="System">
-                    <param id="0" name="Object">Brocoli</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="333384773501990" type="Brocoli">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="160781607416521" type="Brocoli" />
-            </actions>
-        </event-block>
-        <event-block sid="392235892160210">
-            <conditions>
-                <condition id="-11" name="For Each" sid="946473589982357" type="System">
-                    <param id="0" name="Object">Prot</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="962016003726600" type="Prot">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="262492132080452" type="Prot" />
-            </actions>
-        </event-block>
-        <event-block sid="467769816676539">
-            <conditions>
-                <condition id="-11" name="For Each" sid="849453031147594" type="System">
-                    <param id="0" name="Object">Water</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="914102012499701" type="Water">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="466914254335333" type="Water" />
-            </actions>
-        </event-block>
-        <event-block sid="893841387228867">
-            <conditions>
-                <condition id="-11" name="For Each" sid="859971403043138" type="System">
-                    <param id="0" name="Object">Weight</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="179671273644444" type="Weight">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="675241391557513" type="Weight" />
-            </actions>
-        </event-block>
-        <event-block sid="912858060600712">
-            <conditions>
-                <condition id="-11" name="For Each" sid="949731330148363" type="System">
-                    <param id="0" name="Object">Cola</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="339681903326985" type="Cola">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="954457623945308" type="Cola" />
-            </actions>
-        </event-block>
-        <event-block sid="896648885942036">
-            <conditions>
-                <condition id="-11" name="For Each" sid="529174245386241" type="System">
-                    <param id="0" name="Object">Fries</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="841485249969908" type="Fries">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="653691799499713" type="Fries" />
-            </actions>
-        </event-block>
-        <event-block sid="552342451656099">
-            <conditions>
-                <condition id="-11" name="For Each" sid="453283103968301" type="System">
-                    <param id="0" name="Object">Pizza</param>
-                </condition>
-                <condition id="1" name="Is overlapping another object" sid="595421978177954" type="Pizza">
-                    <param id="0" name="Object">Sprite3</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-9" name="Destroy" sid="328375058716883" type="Pizza" />
             </actions>
         </event-block>
     </events>
