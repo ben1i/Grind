@@ -3,6 +3,8 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>Event sheet 1</name>
     <events>
+        <variable constant="0" name="ProgressPercent" sid="874986493332063" static="0" type="number">0</variable>
+        <variable constant="0" name="BarFullWidth" sid="157278858355658" static="0" type="number">200</variable>
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="225944710970009" static="0" type="number">0</variable>
         <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="701365965347750" static="0" type="number">0</variable>
         <variable constant="0" name="Points" sid="352491283470731" static="0" type="number">0</variable>
@@ -33,15 +35,23 @@
             </actions>
         </event-block>
         <comment>Keybinds</comment>
-        <event-block any="1" sid="855144116395010">
+        <event-block sid="855144116395010">
             <conditions>
                 <condition id="2" name="Key is down" sid="554375823846514" type="Keyboard">
                     <param id="0" name="Key">32</param>
                 </condition>
+                <condition behavior="Platform" id="2" name="Is on floor" sid="457956619668732" type="Player" />
             </conditions>
             <actions>
                 <action behavior="Platform" id="7" name="Simulate control" sid="738720517663100" type="Player">
                     <param id="0" name="Control">2</param>
+                </action>
+                <action id="-12" name="Subtract from" sid="200978486145318" type="Player">
+                    <param id="0" name="Instance variable">stamina</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-5" name="Set width" sid="545328785071776" type="bar_fill">
+                    <param id="0" name="Width">Player.stamina</param>
                 </action>
             </actions>
         </event-block>
@@ -87,6 +97,9 @@
                 <action disabled="1" id="-1" name="Set X" sid="733053859136832" type="Player">
                     <param id="0" name="X">100</param>
                 </action>
+                <action id="0" name="Set text" sid="877236634414400" type="TextBox2">
+                    <param id="0" name="Text">&quot;Stamina : &quot; &amp; Player.stamina</param>
+                </action>
             </actions>
         </event-block>
         <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Create it with a random width and height, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
@@ -117,6 +130,48 @@
             <actions>
                 <action id="-21" name="Reset global variables" sid="484644963225364" type="System" />
                 <action id="-26" name="Restart layout" sid="486076817041953" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="804117744847226">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="906733496241573" type="Player">
+                    <param id="0" name="Object">pizza</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="292150035386341" type="Player">
+                    <param id="0" name="Instance variable">stamina</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="289835185150431" type="Player">
+                    <param id="0" name="Instance variable">stamina</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-5" name="Set width" sid="351669118057208" type="bar_fill">
+                    <param id="0" name="Width">Player.stamina</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="491590630786824">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="417808479768066" type="Player">
+                    <param id="0" name="Object">prot</param>
+                </condition>
+                <condition id="-7" name="Compare instance variable" sid="219317801782267" type="Player">
+                    <param id="0" name="Instance variable">stamina</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">200</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="403347318347650" type="Player">
+                    <param id="0" name="Instance variable">stamina</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+                <action id="-5" name="Set width" sid="689584785149399" type="bar_fill">
+                    <param id="0" name="Width">Player.stamina</param>
+                </action>
             </actions>
         </event-block>
     </events>

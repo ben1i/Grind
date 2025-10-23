@@ -21,7 +21,6 @@
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
-        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
@@ -92,12 +91,16 @@
         </object-type>
         <object-type name="Player" sid="742528618321123">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="stamina" sid="170685886693761" type="number" />
+                <instance-variable name="isJumping" sid="168956200102247" type="boolean" />
+            </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="575016609481999">
                     <behavior id="Platform" />
                 </behavior-type>
-                <behavior-type name="BoundToLayout" sid="540309326831874">
-                    <behavior id="bound" />
+                <behavior-type name="Solid" sid="118226638467690">
+                    <behavior id="solid" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -131,6 +134,84 @@
             <instance-variables>
                 <instance-variable name="Stamina" sid="130752389452874" type="number" />
             </instance-variables>
+        </object-type>
+        <object-type name="bar_bg" sid="853835241715181">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="108634647371879" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bar_fill" sid="319620257147477">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="player_stamina" sid="187295102218449" type="number" />
+            </instance-variables>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="546032591960971" speed="5">
+                    <frame duration="1" hotspotX="0" hotspotY="0" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="pizza" sid="454412878749606">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="681092565200805">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="653948944723496" speed="5">
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" original-source="C:\Users\leape\Pictures\pizza.png">
+                        <collision-poly>
+                            <point x="0.0136986" y="0.0136986" />
+                            <point x="0.493151" y="0.0684932" />
+                            <point x="0.808219" y="0.191781" />
+                            <point x="0.917808" y="0.493151" />
+                            <point x="0.726027" y="0.726027" />
+                            <point x="0.493151" y="0.917808" />
+                            <point x="0.205479" y="0.794521" />
+                            <point x="0.0684932" y="0.493151" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Sprite2" sid="419897389420146">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="932897186739367" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="prot" sid="961245094093548">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="133850467888359">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="581008625225205" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\leape\Pictures\prot.png">
+                        <collision-poly>
+                            <point x="0.181818" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.818182" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.909091" y="0.925926" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0909091" y="0.925926" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TextBox2" sid="448041010621650">
+            <plugin id="TextBox" />
         </object-type>
     </object-folder>
     <families />
