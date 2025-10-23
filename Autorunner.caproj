@@ -354,32 +354,10 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="534753196521227" speed="5">
-                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" original-source="C:\Users\benja\Downloads\pizza.png">
-                        <collision-poly>
-                            <point x="0.0136986" y="0.0136986" />
-                            <point x="0.493151" y="0.0684932" />
-                            <point x="0.808219" y="0.191781" />
-                            <point x="0.917808" y="0.493151" />
-                            <point x="0.726027" y="0.726027" />
-                            <point x="0.493151" y="0.917808" />
-                            <point x="0.205479" y="0.794521" />
-                            <point x="0.0684932" y="0.493151" />
-                        </collision-poly>
-                    </frame>
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" original-source="C:\Users\benja\Downloads\pizza.png" />
                 </animation>
                 <animation framecount="1" loop="0" name="Hit" pingpong="0" repeatcount="1" repeatto="0" sid="355523412232613" speed="5">
-                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" original-source="C:\Users\benja\Downloads\pizza.png">
-                        <collision-poly>
-                            <point x="0.0136986" y="0.0136986" />
-                            <point x="0.493151" y="0.0684932" />
-                            <point x="0.808219" y="0.191781" />
-                            <point x="0.917808" y="0.493151" />
-                            <point x="0.726027" y="0.726027" />
-                            <point x="0.493151" y="0.917808" />
-                            <point x="0.205479" y="0.794521" />
-                            <point x="0.0684932" y="0.493151" />
-                        </collision-poly>
-                    </frame>
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" original-source="C:\Users\benja\Downloads\pizza.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -393,6 +371,173 @@
         </object-type>
         <object-type name="SlashText" sid="813639292462375">
             <plugin id="Text" />
+        </object-type>
+        <object-type name="Water" sid="475074491712264">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="738098380912980">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="520695053771664" speed="5">
+                    <frame duration="1" hotspotX="0.501075" hotspotY="0.500343" original-source="C:\Users\benja\Downloads\sprites fr\bonus\water.png">
+                        <collision-poly>
+                            <point x="0.266667" y="0.0851064" />
+                            <point x="0.498925" y="0" />
+                            <point x="0.733333" y="0.0851064" />
+                            <point x="1" y="0.499657" />
+                            <point x="0.866667" y="0.957447" />
+                            <point x="0.498925" y="1" />
+                            <point x="0.133333" y="0.957447" />
+                            <point x="0" y="0.499657" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Prot" sid="135309340987971">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="903822538230492">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="782160637898031" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\bonus\prot.png">
+                        <collision-poly>
+                            <point x="0.181818" y="0.148148" />
+                            <point x="0.5" y="0" />
+                            <point x="0.818182" y="0.148148" />
+                            <point x="1" y="0.5" />
+                            <point x="0.909091" y="0.925926" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0909091" y="0.925926" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Weight" sid="275890681396414">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="868874112070085">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="573327375525772" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\bonus\halteres.png">
+                        <collision-poly>
+                            <point x="0.0789474" y="0.1875" />
+                            <point x="0.5" y="0.3125" />
+                            <point x="0.921053" y="0.1875" />
+                            <point x="1" y="0.5" />
+                            <point x="0.921053" y="0.8125" />
+                            <point x="0.5" y="0.6875" />
+                            <point x="0.0789474" y="0.8125" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Brocoli" sid="444925693728074">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="907778686789495">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="868415428149888" speed="5">
+                    <frame duration="1" hotspotX="0.500489" hotspotY="0.500489" original-source="C:\Users\benja\Downloads\sprites fr\bonus\brocolis.png">
+                        <collision-poly>
+                            <point x="0.181818" y="0.181818" />
+                            <point x="0.499511" y="0.030303" />
+                            <point x="0.848485" y="0.151515" />
+                            <point x="0.939394" y="0.499511" />
+                            <point x="0.727273" y="0.727273" />
+                            <point x="0.499511" y="0.909091" />
+                            <point x="0.30303" y="0.69697" />
+                            <point x="0" y="0.499511" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Pizza" sid="223947811209740">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="352325581347901">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="102589848387945" speed="5">
+                    <frame duration="1" hotspotX="0.500461" hotspotY="0.500461" original-source="C:\Users\benja\Downloads\sprites fr\malus\pizza.png">
+                        <collision-poly>
+                            <point x="0.257143" y="0.257143" />
+                            <point x="0.499539" y="0.0571429" />
+                            <point x="0.8" y="0.2" />
+                            <point x="0.942857" y="0.499539" />
+                            <point x="1" y="1" />
+                            <point x="0.499539" y="0.942857" />
+                            <point x="0.2" y="0.8" />
+                            <point x="0.0571429" y="0.499539" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Fries" sid="196706321113076">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="104965282595534">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="316972887354305" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\malus\fries.png">
+                        <collision-poly>
+                            <point x="0.153846" y="0.105263" />
+                            <point x="0.846154" y="0.105263" />
+                            <point x="1" y="0.5" />
+                            <point x="0.923077" y="0.947368" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0769231" y="0.947368" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Cola" sid="697049475017727">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="692725604356803">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="480425148979777" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\malus\cola.png">
+                        <collision-poly>
+                            <point x="0.0384615" y="0.0238095" />
+                            <point x="0.5" y="0" />
+                            <point x="0.961538" y="0.0238095" />
+                            <point x="1" y="0.5" />
+                            <point x="0.961538" y="0.97619" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0384615" y="0.97619" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
