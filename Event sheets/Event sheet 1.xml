@@ -7,7 +7,7 @@
         <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="701365965347750" static="0" type="number">0</variable>
         <variable constant="0" name="Points" sid="352491283470731" static="0" type="number">0</variable>
         <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="436411932967248" static="0" type="number">0</variable>
-        <comment>Make sure everything moves left across the screen (since the default 0 degrees is right)</comment>
+        <comment>On the start of the game, the camera is set on the X and Y axis so that the outside of the game is not on screen</comment>
         <event-block sid="467408829797980">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="141875354388639" type="System" />
@@ -79,17 +79,21 @@
                 </action>
             </actions>
         </event-block>
-        <comment>Keep incrementing the current and total distances, and display the total distance in a text object.</comment>
+        <comment>Every tick, the camera follows the player and add 200 pixels on the X axis so the border is not visible at the beginning</comment>
         <event-block sid="444303087653124">
             <conditions>
                 <condition id="-1" name="Every tick" sid="999809016244226" type="System" />
             </conditions>
             <actions>
-                <action id="0" name="Set text" sid="186043715942471" type="DistanceDisplay">
-                    <param id="0" name="Text">round(Points)</param>
-                </action>
                 <action id="-5" name="Scroll to X" sid="147286690442910" type="System">
                     <param id="0" name="X">Player.X + 200</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="771980115248437" type="Sprite3">
+                    <param id="0" name="Object">Player</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+                <action id="0" name="Set text" sid="522581090981229" type="DistanceDisplay">
+                    <param id="0" name="Text">TotalDistance</param>
                 </action>
             </actions>
         </event-block>
@@ -109,7 +113,6 @@
                 </action>
             </actions>
         </event-block>
-        <comment>Destroy blocks that go off the left of the screen so they don&apos;t keep taking up memory or CPU.</comment>
         <comment>If the player falls off the bottom of the screen, restart the game.</comment>
         <event-block sid="889118406698099">
             <conditions>
@@ -123,6 +126,7 @@
                 <action id="-26" name="Restart layout" sid="486076817041953" type="System" />
             </actions>
         </event-block>
+        <comment>Infinite generation. When the sprite is on-screen, it moves further away while creating a background and a road behind it</comment>
         <event-block sid="276151770328702">
             <conditions>
                 <condition id="-3" name="Is on-screen" sid="420049196815099" type="Sprite2" />
@@ -163,6 +167,7 @@
                 </action>
             </actions>
         </event-block>
+        <comment>Destroy blocks that go off the left of the screen so they don&apos;t keep taking up memory or CPU.</comment>
         <event-block sid="361530015253909">
             <conditions>
                 <condition id="-3" inverted="1" name="Is on-screen" sid="349235639983205" type="TiledBackground" />
@@ -197,6 +202,115 @@
             </conditions>
             <actions>
                 <action id="-9" name="Destroy" sid="799553593474972" type="FloorTop" />
+            </actions>
+        </event-block>
+        <event-block sid="647384637225886">
+            <conditions>
+                <condition id="-3" inverted="1" name="Is on-screen" sid="545047633475082" type="Monster1" />
+                <condition id="-1" name="Compare X" sid="394503317105519" type="Monster1">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">Player.X</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="978619880215899" type="Monster1" />
+            </actions>
+        </event-block>
+        <comment>Every tick and when the player is moving forward, it increases the score of Total Distance and displays it in the text box</comment>
+        <event-block sid="876528850429703">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="559144959525977" type="System" />
+                <condition id="2" name="Key is down" sid="163745347684762" type="Keyboard">
+                    <param id="0" name="Key">68</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-10" name="Add to" sid="402379930313684" type="System">
+                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="1" name="Value">1 * 0.01</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Random enemy spawn event. When the player is moving, it has a random chance of spawning an enemy wherever a new platform is created</comment>
+        <event-block sid="826639351001781">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="720674079432380" type="System">
+                    <param id="0" name="Interval (seconds)">random(1, 2)</param>
+                </condition>
+                <condition behavior="Platform" id="0" name="Is moving" sid="478736172024427" type="Player" />
+            </conditions>
+            <actions>
+                <action id="0" name="Spawn another object" sid="460738947768957" type="Sprite2">
+                    <param id="0" name="Object">Monster1</param>
+                    <param id="1" name="Layer">0</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+                <action id="-3" name="Set position" sid="342657910159021" type="Monster1">
+                    <param id="0" name="X">Sprite2.X</param>
+                    <param id="1" name="Y">467</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="918642647547410">
+            <conditions>
+                <condition id="0" name="On key pressed" sid="909032858888992" type="Keyboard">
+                    <param id="0" name="Key">65</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="274408187167387" type="Monster1">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="653426200795960" type="Monster1">
+                    <param id="0" name="Instance variable">Life</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="556733163322781">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="770120364677380" type="Monster1">
+                    <param id="0" name="Object">Player</param>
+                </condition>
+                <condition id="-11" name="For Each" sid="636262177462089" type="System">
+                    <param id="0" name="Object">Monster1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="554988080848594" type="Player" />
+                <action id="-26" name="Restart layout" sid="109678388591557" type="System" />
+                <action id="-21" name="Reset global variables" sid="436815246558711" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="657725484155291">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="712140621738385" type="Monster1">
+                    <param id="0" name="Instance variable">Life</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="580679128629764" type="Monster1" />
+                <action id="-10" name="Add to" sid="237429694621471" type="System">
+                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="1" name="Value">10</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="980436742078192">
+            <conditions>
+                <condition id="-11" name="For Each" sid="810672087052700" type="System">
+                    <param id="0" name="Object">Monster1</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="375951375589421" type="Monster1">
+                    <param id="0" name="Object">Sprite3</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-15" name="Set visible" sid="219574393477371" type="SlashText">
+                    <param id="0" name="Visibility">1</param>
+                </action>
             </actions>
         </event-block>
     </events>
