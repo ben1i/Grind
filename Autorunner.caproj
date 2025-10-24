@@ -75,7 +75,7 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
-            <texture original-source="C:\Users\benja\Documents\ShapeIt\src\assets\platform.png" />
+            <texture original-source="C:\Users\benja\Downloads\background.png" />
         </object-type>
         <object-type name="Player" sid="742528618321123">
             <plugin id="Sprite" />
@@ -306,6 +306,82 @@
                         </collision-poly>
                     </frame>
                 </animation>
+                <animation framecount="3" loop="0" name="WalkGiga" pingpong="0" repeatcount="1" repeatto="0" sid="563476864368306" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.111111" y="0.0833333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.888889" y="0.0833333" />
+                            <point x="0.888889" y="0.5" />
+                            <point x="0.833333" y="0.875" />
+                            <point x="0.5" y="0.958333" />
+                            <point x="0.111111" y="0.916667" />
+                            <point x="0.222222" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.111111" y="0.0833333" />
+                            <point x="0.5" y="0" />
+                            <point x="0.888889" y="0.0833333" />
+                            <point x="0.833333" y="0.5" />
+                            <point x="0.833333" y="0.875" />
+                            <point x="0.5" y="1" />
+                            <point x="0.166667" y="0.875" />
+                            <point x="0.222222" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500949" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.117647" y="0.0833333" />
+                            <point x="0.499051" y="0" />
+                            <point x="0.882353" y="0.0833333" />
+                            <point x="0.882353" y="0.5" />
+                            <point x="0.764706" y="0.833333" />
+                            <point x="0.499051" y="0.875" />
+                            <point x="0.176471" y="0.875" />
+                            <point x="0.235294" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="3" loop="0" name="FightGiga" pingpong="0" repeatcount="1" repeatto="0" sid="939461771775207" speed="5">
+                    <frame duration="1" hotspotX="0.500699" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.174825" y="0.168464" />
+                            <point x="0.499301" y="0.0377358" />
+                            <point x="0.781818" y="0.210243" />
+                            <point x="0.781818" y="0.5" />
+                            <point x="0.738462" y="0.747978" />
+                            <point x="0.499301" y="0.998652" />
+                            <point x="0.0447552" y="0.956873" />
+                            <point x="0.218182" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.123324" y="0.123656" />
+                            <point x="0.5" y="0.0403226" />
+                            <point x="0.66622" y="0.334677" />
+                            <point x="0.66622" y="0.5" />
+                            <point x="0.74933" y="0.748656" />
+                            <point x="0.5" y="0.998656" />
+                            <point x="0.0844504" y="0.915323" />
+                            <point x="0.126005" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0925553" y="0.123656" />
+                            <point x="0.5" y="0.540323" />
+                            <point x="0.720322" y="0.373656" />
+                            <point x="0.905433" y="0.5" />
+                            <point x="0.843058" y="0.790323" />
+                            <point x="0.5" y="0.748656" />
+                            <point x="0.0633803" y="0.915323" />
+                            <point x="0.0945674" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
             </animation-folder>
         </object-type>
         <object-type name="Touch" sid="799829859117717">
@@ -353,11 +429,69 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="534753196521227" speed="5">
-                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" original-source="C:\Users\benja\Downloads\pizza.png" />
+                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="534753196521227" speed="5">
+                    <frame duration="1" hotspotX="0.506688" hotspotY="0.506571" original-source="C:\Users\benja\Downloads\sprites fr\mob.png">
+                        <collision-poly>
+                            <point x="0.170732" y="0.12963" />
+                            <point x="0.499607" y="0.296296" />
+                            <point x="0.609756" y="0.296296" />
+                            <point x="0.804878" y="0.5" />
+                            <point x="0.756098" y="0.814815" />
+                            <point x="0.499607" y="0.851852" />
+                            <point x="0.268293" y="0.796296" />
+                            <point x="0.121951" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500329" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\mob-hurt\pose2.png">
+                        <collision-poly>
+                            <point x="0.0816327" y="0.0869565" />
+                            <point x="0.499671" y="0.195652" />
+                            <point x="0.795918" y="0.217391" />
+                            <point x="0.816327" y="0.5" />
+                            <point x="0.795918" y="0.782609" />
+                            <point x="0.499671" y="0.826087" />
+                            <point x="0.163265" y="0.826087" />
+                            <point x="0.0816327" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500273" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\mob-hurt\pose3.png">
+                        <collision-poly>
+                            <point x="0.38983" y="0.5" />
+                            <point x="0.499727" y="0.23913" />
+                            <point x="0.745763" y="0.326087" />
+                            <point x="0.915254" y="0.5" />
+                            <point x="0.830508" y="0.782609" />
+                            <point x="0.499727" y="0.826087" />
+                            <point x="0.271186" y="0.652174" />
+                            <point x="0.101695" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.500283" hotspotY="0.5" original-source="C:\Users\benja\Downloads\sprites fr\mob-hurt\pose4.png">
+                        <collision-poly>
+                            <point x="0.350877" y="0.434783" />
+                            <point x="0.499717" y="0.347826" />
+                            <point x="0.666667" y="0.413043" />
+                            <point x="0.929825" y="0.5" />
+                            <point x="0.842105" y="0.804348" />
+                            <point x="0.499717" y="0.847826" />
+                            <point x="0.210526" y="0.73913" />
+                            <point x="0.0175439" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="1" loop="0" name="Hit" pingpong="0" repeatcount="1" repeatto="0" sid="355523412232613" speed="5">
-                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" original-source="C:\Users\benja\Downloads\pizza.png" />
+                    <frame duration="1" hotspotX="0.507013" hotspotY="0.507013" original-source="C:\Users\benja\Downloads\sprites fr\mob-hurt\pose1.png">
+                        <collision-poly>
+                            <point x="0.0869565" y="0.0869565" />
+                            <point x="0.5" y="0.173913" />
+                            <point x="0.73913" y="0.26087" />
+                            <point x="1" y="0.5" />
+                            <point x="0.782609" y="0.782609" />
+                            <point x="0.5" y="1" />
+                            <point x="0.173913" y="0.826087" />
+                            <point x="0.0869565" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
