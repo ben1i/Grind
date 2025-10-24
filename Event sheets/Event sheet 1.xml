@@ -807,6 +807,22 @@
         </event-block>
         <comment>Walking animations</comment>
         <comment>If the player has less than 500 points, the player stays fat</comment>
+        <event-block sid="783789749018640">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="208954809380464" type="System">
+                    <param id="0" name="Variable">Points</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+                <condition behavior="Platform" id="0" name="Is moving" sid="277359382666936" type="Player" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="175514626985770" type="Player">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="969683057079605">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="487694961865432" type="System">

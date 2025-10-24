@@ -429,7 +429,7 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="4" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="534753196521227" speed="5">
+                <animation framecount="4" loop="0" name="Hit" pingpong="0" repeatcount="1" repeatto="0" sid="534753196521227" speed="5">
                     <frame duration="1" hotspotX="0.506688" hotspotY="0.506571" original-source="C:\Users\benja\Downloads\sprites fr\mob.png">
                         <collision-poly>
                             <point x="0.170732" y="0.12963" />
@@ -479,7 +479,7 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="1" loop="0" name="Hit" pingpong="0" repeatcount="1" repeatto="0" sid="355523412232613" speed="5">
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="355523412232613" speed="5">
                     <frame duration="1" hotspotX="0.507013" hotspotY="0.507013" original-source="C:\Users\benja\Downloads\sprites fr\mob-hurt\pose1.png">
                         <collision-poly>
                             <point x="0.0869565" y="0.0869565" />
