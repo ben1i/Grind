@@ -103,7 +103,7 @@
                     <param id="0" name="Text">Points</param>
                 </action>
                 <action behavior="Platform" id="1" name="Set max speed" sid="995453359865168" type="Player">
-                    <param id="0" name="Max Speed">100 + (Points / 10)</param>
+                    <param id="0" name="Max Speed">100 + (Points / 2)</param>
                 </action>
                 <action id="-9" name="Set value" sid="873745283757252" type="System">
                     <param id="0" name="Variable">Points</param>
@@ -579,7 +579,7 @@
                 <action id="-9" name="Destroy" sid="873786556109922" type="Brocoli" />
                 <action id="-10" name="Add to" sid="416398768314447" type="System">
                     <param id="0" name="Variable">ItemsPoints</param>
-                    <param id="1" name="Value">10 * (Points * 0.1)</param>
+                    <param id="1" name="Value">10</param>
                 </action>
             </actions>
         </event-block>
@@ -596,7 +596,7 @@
                 <action id="-9" name="Destroy" sid="580623875660361" type="Prot" />
                 <action id="-10" name="Add to" sid="581363309558802" type="System">
                     <param id="0" name="Variable">ItemsPoints</param>
-                    <param id="1" name="Value">10 * (TotalDistance * 0.1)</param>
+                    <param id="1" name="Value">10</param>
                 </action>
             </actions>
         </event-block>
@@ -613,7 +613,7 @@
                 <action id="-9" name="Destroy" sid="672518462505467" type="Water" />
                 <action id="-10" name="Add to" sid="990916880124084" type="System">
                     <param id="0" name="Variable">ItemsPoints</param>
-                    <param id="1" name="Value">10 * (TotalDistance * 0.1)</param>
+                    <param id="1" name="Value">10</param>
                 </action>
             </actions>
         </event-block>
@@ -630,7 +630,7 @@
                 <action id="-9" name="Destroy" sid="398367658556201" type="Weight" />
                 <action id="-10" name="Add to" sid="787557243766611" type="System">
                     <param id="0" name="Variable">ItemsPoints</param>
-                    <param id="1" name="Value">10 * (TotalDistance * 0.1)</param>
+                    <param id="1" name="Value">10</param>
                 </action>
             </actions>
         </event-block>
@@ -647,7 +647,7 @@
                 <action id="-9" name="Destroy" sid="370078761572189" type="Cola" />
                 <action id="-11" name="Subtract from" sid="902784133678044" type="System">
                     <param id="0" name="Variable">ItemsPoints</param>
-                    <param id="1" name="Value">20 * (TotalDistance * 0.1)</param>
+                    <param id="1" name="Value">50</param>
                 </action>
             </actions>
         </event-block>
@@ -664,7 +664,7 @@
                 <action id="-9" name="Destroy" sid="374233451987431" type="Fries" />
                 <action id="-11" name="Subtract from" sid="372611678011575" type="System">
                     <param id="0" name="Variable">ItemsPoints</param>
-                    <param id="1" name="Value">20 * (TotalDistance * 0.1)</param>
+                    <param id="1" name="Value">50</param>
                 </action>
             </actions>
         </event-block>
@@ -681,7 +681,7 @@
                 <action id="-9" name="Destroy" sid="326431866701295" type="Pizza" />
                 <action id="-11" name="Subtract from" sid="219122234409677" type="System">
                     <param id="0" name="Variable">ItemsPoints</param>
-                    <param id="1" name="Value">20 * (TotalDistance * 0.1)</param>
+                    <param id="1" name="Value">50</param>
                 </action>
             </actions>
         </event-block>
@@ -734,7 +734,7 @@
                 <action id="-9" name="Destroy" sid="580679128629764" type="Monster1" />
                 <action id="-10" name="Add to" sid="237429694621471" type="System">
                     <param id="0" name="Variable">FightPoints</param>
-                    <param id="1" name="Value">30 * (TotalDistance * 0.1)</param>
+                    <param id="1" name="Value">30</param>
                 </action>
             </actions>
         </event-block>
@@ -855,7 +855,7 @@
                 <condition id="-14" name="Compare variable" sid="339305270464070" type="System">
                     <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">2</param>
-                    <param id="2" name="Value">3000</param>
+                    <param id="2" name="Value">2000</param>
                 </condition>
                 <condition behavior="Platform" id="0" name="Is moving" sid="362865408920861" type="Player" />
             </conditions>
@@ -872,12 +872,12 @@
                 <condition id="-14" name="Compare variable" sid="346406898068438" type="System">
                     <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">3000</param>
+                    <param id="2" name="Value">2000</param>
                 </condition>
                 <condition id="-14" name="Compare variable" sid="843830234109454" type="System">
                     <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">2</param>
-                    <param id="2" name="Value">10000</param>
+                    <param id="2" name="Value">3000</param>
                 </condition>
                 <condition behavior="Platform" id="0" name="Is moving" sid="392500287477538" type="Player" />
             </conditions>
@@ -893,7 +893,7 @@
                 <condition id="-14" name="Compare variable" sid="207485252734281" type="System">
                     <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">10000</param>
+                    <param id="2" name="Value">3000</param>
                 </condition>
                 <condition behavior="Platform" id="0" name="Is moving" sid="184700699966579" type="Player" />
             </conditions>
@@ -967,7 +967,7 @@
                 <condition id="-14" name="Compare variable" sid="910044988452659" type="System">
                     <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">2</param>
-                    <param id="2" name="Value">3000</param>
+                    <param id="2" name="Value">2000</param>
                 </condition>
                 <condition id="2" name="Key is down" sid="356629211466555" type="Keyboard">
                     <param id="0" name="Key">65</param>
@@ -985,12 +985,12 @@
                 <condition id="-14" name="Compare variable" sid="443685239987441" type="System">
                     <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">3000</param>
+                    <param id="2" name="Value">2000</param>
                 </condition>
                 <condition id="-14" name="Compare variable" sid="925037190348125" type="System">
                     <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">2</param>
-                    <param id="2" name="Value">10000</param>
+                    <param id="2" name="Value">3000</param>
                 </condition>
                 <condition id="2" name="Key is down" sid="574849283699129" type="Keyboard">
                     <param id="0" name="Key">65</param>
@@ -1008,7 +1008,7 @@
                 <condition id="-14" name="Compare variable" sid="110619661874240" type="System">
                     <param id="0" name="Variable">Points</param>
                     <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">10000</param>
+                    <param id="2" name="Value">3000</param>
                 </condition>
                 <condition id="2" name="Key is down" sid="619696977988187" type="Keyboard">
                     <param id="0" name="Key">65</param>

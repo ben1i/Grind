@@ -515,7 +515,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="520695053771664" speed="5">
-                    <frame duration="1" hotspotX="0.501075" hotspotY="0.500343" original-source="C:\Users\benja\Downloads\sprites fr\bonus\water.png">
+                    <frame duration="1" hotspotX="0.500949" hotspotY="0.500329" original-source="C:\Users\benja\Downloads\sprites fr\bonus\water.png">
                         <collision-poly>
                             <point x="0.266667" y="0.0851064" />
                             <point x="0.498925" y="0" />
@@ -587,7 +587,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="868415428149888" speed="5">
-                    <frame duration="1" hotspotX="0.500489" hotspotY="0.500489" original-source="C:\Users\benja\Downloads\sprites fr\bonus\brocolis.png">
+                    <frame duration="1" hotspotX="0.500461" hotspotY="0.500461" original-source="C:\Users\benja\Downloads\sprites fr\bonus\brocolis.png">
                         <collision-poly>
                             <point x="0.181818" y="0.181818" />
                             <point x="0.499511" y="0.030303" />
@@ -611,16 +611,16 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="102589848387945" speed="5">
-                    <frame duration="1" hotspotX="0.500461" hotspotY="0.500461" original-source="C:\Users\benja\Downloads\sprites fr\malus\pizza.png">
+                    <frame duration="1" hotspotX="0.500414" hotspotY="0.500414" original-source="C:\Users\benja\Downloads\sprites fr\malus\pizza.png">
                         <collision-poly>
-                            <point x="0.257143" y="0.257143" />
-                            <point x="0.499539" y="0.0571429" />
-                            <point x="0.8" y="0.2" />
-                            <point x="0.942857" y="0.499539" />
-                            <point x="1" y="1" />
-                            <point x="0.499539" y="0.942857" />
-                            <point x="0.2" y="0.8" />
-                            <point x="0.0571429" y="0.499539" />
+                            <point x="0.230769" y="0.230769" />
+                            <point x="0.499586" y="0.0512821" />
+                            <point x="0.820513" y="0.179487" />
+                            <point x="0.948718" y="0.499586" />
+                            <point x="0.948718" y="0.948718" />
+                            <point x="0.499586" y="0.948718" />
+                            <point x="0.179487" y="0.820513" />
+                            <point x="0.0512821" y="0.499586" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -672,6 +672,12 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="BonusText" sid="818756129409747">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="MalusText" sid="107384816038973">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families />
