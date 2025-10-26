@@ -673,12 +673,6 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="BonusText" sid="818756129409747">
-            <plugin id="Text" />
-        </object-type>
-        <object-type name="MalusText" sid="107384816038973">
-            <plugin id="Text" />
-        </object-type>
     </object-folder>
     <families />
     <layout-folder>
